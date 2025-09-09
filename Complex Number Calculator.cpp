@@ -1,4 +1,4 @@
-//Problem Statement: Implement a class Complex which represents the Complex Number. Implement the following functions Using Operator Overloading: 
+//Problem Statement: Implement a class Complex which represents the Complex Number. Implement the following functions Using Operator Overloading:
 //1. Constructors ( Include all constructor types)
 //2. Overload operator + to add two complex numbers using member function 
 //3. Overload operator * to multiply two complex numbers using friend function 
