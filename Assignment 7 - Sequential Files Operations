@@ -1,0 +1,68 @@
+//Problem Statement: Develop a system that defines inventory class with suitable data members and member functions. Perform read and write operations using class objects.
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+
+class inventory {
+    string name;
+    int item_no, price, quantity;
+public:
+    void accept();
+    void display();
+    void writeToFile(ofstream &out);
+    void readFromFile(ifstream &in);
+};
+
+void inventory::accept() {
+    cout << "Enter the name of item: ";
+    cin >> name;
+    cout << "Enter item no: ";
+    cin >> item_no;
+    cout << "Enter the price of item: ";
+    cin >> price;
+    cout << "Enter the quantity: ";
+    cin >> quantity;
+}
+
+void inventory::display() {
+    cout << "The name of the product is: " << name << endl;
+    cout << "The id of the product: " << item_no << endl;
+    cout << "The price of the product is: " << price << endl;
+    cout << "Available quantity:" << quantity << endl;
+}
+
+void inventory::writeToFile(ofstream &out) {
+    out << name << " " << item_no << " " << price << " " << quantity << endl;
+}
+
+void inventory::readFromFile(ifstream &in) {
+    in >> name >> item_no >> price >> quantity;
+}
+
+int main() {
+    int n;
+    cout << "Enter no of products: ";
+    cin >> n;
+    inventory *obj = new inventory[n];
+    cout<<endl;
+    ofstream file_obj("Input.txt");
+    for (int i = 0; i < n; i++) {
+        obj[i].accept();
+        obj[i].writeToFile(file_obj);
+        cout<<endl;
+    }
+    file_obj.close();
+    cout<<"INVENTORY DETAILS:"<<endl;
+    cout<<endl;
+    ifstream file_obj2("Input.txt");
+    for (int i = 0; i < n; i++) {
+        obj[i].readFromFile(file_obj2);
+        obj[i].display();
+        cout<<endl;
+    }
+    file_obj2.close();
+
+    delete[] obj;
+    return 0;
+}
