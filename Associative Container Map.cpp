@@ -7,7 +7,7 @@ using namespace std;
 int main() {
   typedef map <int,string> mapType;
   mapType populationMap;
-  populationMap.insert(pair<int,string>(1234,"Amit XYZ"));
+  populationMap.insert(pair<int,string>(1234,"Amit XYZ")); 
   populationMap.insert(pair<int, string>(2222, "Rahul"));
   populationMap.insert(pair<int, string>(3333, "Shweta"));
   populationMap.insert(pair<int, string>(4444, "Aditi"));
