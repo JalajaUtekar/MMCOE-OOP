@@ -1,5 +1,5 @@
 //Problem Statement: Design a program with a template for sorting the accepted array and displaying it using integer/float type data. Implement any sorting type using Generic Programming
-#include <iotream>
+#include <iostream>
 using namespace std;
 template <class T>
 void SelectionSort(T arr[], int n) {
